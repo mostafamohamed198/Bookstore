@@ -1,0 +1,235 @@
+{% extends "network/layout.html" %}
+{% load static %}
+ 
+        {% block body %}
+        <script>
+         document.addEventListener('DOMContentLoaded', function() {
+document.querySelector('#addcomment').onsubmit = function() {
+  fetch('/comments', {
+    method: 'POST',
+    body: JSON.stringify({
+        thecomment: document.querySelector('#comment').value,
+        thecommentuser: document.querySelector('#commentsubmitter').value,
+        thecommentbook: document.querySelector('#commentbook').value,
+    })})}
+    
+    var cart =document.querySelector('.buycart');
+    let ok = false;
+    cart.addEventListener('click', function(){
+        console.log('cllicked')
+        if(!ok){
+            let iid = cart.id;
+            cart.innerHTML='<i class="fa-solid fa-cart-shopping"></i> Added to cart'
+            cart.classList.remove('buycart') 
+            cart.classList.add('boughtcart')
+            // cart.classList.remove('cart1') 
+            // cart.classList.add('cart2')
+            ok=true;
+            fetch('/cart/'+ iid,{
+                method:'PUT',
+                body:JSON.stringify({
+                    cart:true
+                })
+            })
+        }
+
+        else{
+            let eid = cart.id
+            console.log('clicked');
+                console.log(cart.id);
+                cart.innerHTML = ' <i class="fa-solid fa-cart-shopping"</i>Add to cart'
+                cart.classList.remove('boughtcart') 
+                cart.classList.add('buycart')
+                console.log('changed')
+                ok = false;
+                fetch('/cart/' + eid , {
+                method:'PUT',
+                body: JSON.stringify({
+                    notcart: true
+                })
+            })
+
+        }
+    })
+
+});
+
+document.addEventListener('DOMContentLoaded',function(){
+    let bcart = document.querySelector('.boughtcart');
+    let okk = false;
+    bcart.addEventListener('click', function(){
+        console.log('bclicked');
+        if (!okk){
+            let iiid = bcart.id
+            console.log('clicked');
+                console.log(iiid);
+                bcart.innerHTML = '<i class="fa-solid fa-cart-shopping"></i>Add to cart'
+                bcart.classList.remove('boughtcart') 
+                bcart.classList.add('buycart')
+                console.log('changed')
+                okk = true;
+                fetch('/cart/' + iiid , {
+                method:'PUT',
+                body: JSON.stringify({
+                    notcart: true
+                })
+            })
+
+        }
+        else{
+            let eeid = bcart.id
+            console.log('clicked');
+                console.log(eeid);
+                bcart.innerHTML = ' <i class="fa-solid fa-cart-shopping"></i>Added to cart'
+                bcart.classList.remove('buycart') 
+                bcart.classList.add('boughtcart')
+
+                console.log('changed')
+                okk = false;
+                fetch('/cart/' + eeid , {
+                method:'PUT',
+                body: JSON.stringify({
+                    cart: true
+                })
+            })
+
+        }
+    })
+})
+   
+        </script>
+
+
+
+        
+        <div id="title">
+            <div class="container">
+                <div id="titlewritten">
+                <h3 id="authorname">{{book.authorname}}</h3>
+                <h1 id="bookname"> {{book.name}}</h1>
+                <p id="slogan">-{{book.slogan}}-</p>
+                <h2 id="price">Price:- <span>${{book.price}}</span></h2>
+                
+                <div id="cartbuy">
+
+                {% if request.user in book.addtocart.all %}
+                <button id="{{book.id}}" class="boughtcart"><i class="fa-solid fa-cart-shopping"></i> Added to cart</button>
+                {% else %}
+                <button id="{{book.id}}" class="buycart"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
+                {% endif %}
+                
+                <p>{{book.addtocart.all.count}}</p>
+                </div>
+                </div>
+                <div>
+                    <img id='bookimg' src="..{{book.cover.url}}">
+                </div>
+            </div>
+        </div>
+        <div id="dqdiv">
+        <div class="container" id="descriptionquotes">
+            
+            <div id="description">
+                <h1 class="dqheading">Description</h1>
+                <p id="dpar">{{book.description}}</p>
+                
+            </div>
+            <div id="quotes">
+                {% if book.quote1 or book.quote2 or book.quote3 is not None %}
+                <h1 class="dqheading">Book Quotes</h1>
+                {% if book.quote1 is not None %}
+                <div class='quotediv'>
+                    <h2 class="quotep">{{book.quote1}}</h2>
+                </div>
+                {% endif %}
+
+                {% if book.quote2 is not None %}
+                <div class='quotediv'>
+                    <h2 class="quotep">{{book.quote2}}</h2>
+                </div>
+                {% endif %}
+
+                {% if book.quote3 is not None %}
+                <div class='quotediv'>
+                    <h2 class="quotep">{{book.quote3}}</h2>
+                </div>
+
+                {% endif %}
+                {% endif %}
+            </div>
+            
+        </div>
+        
+     
+        
+    </div>
+    <div id="author">
+        <div class="container" id="authorcontainer">
+
+            <div id="authorimage">
+                <img id='aimage'src="..{{book.authorimage.url}}">
+            </div>
+            <div id="authorwritten">
+                <h1 style="font-weight: 200;">{{book.authorname}}</h1>
+                <h2>-{{book.position}}</h2>
+                <p>{{book.wordbyauthor}}</p>
+            </div>
+        </div>
+    </div>
+    <div id="chaptersfull">
+        <div class="container" id="chapters">
+            {% for chapter in chapters %}
+            <div class="chapter">
+                <h2>
+                   Chapter {{chapter.chapternumber}}
+                </h2>
+                <p>{{chapter.chapterdescription}}</p>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+    <div class="container">
+        {% if rewards is not None %}
+        <h1 id="rewadheading">Rewards</h1>
+        <div id="rewards">
+            {% for reward in rewards %}
+            <div class="reward">
+                <h2>{{reward.rewardname}}</h2>
+                <img src="..{{reward.rewardimage.url}}">
+            </div>
+           {% endfor %}
+           {% endif %}
+
+            
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+    <form id="addcomment" method="post">
+        {% csrf_token %}
+        <input hidden name='thecommentuser' value="{{ request.user.id }}" id="commentsubmitter">
+        <input hidden name='thecommentbook' value="{{ book.id }}" id="commentbook">
+        <input  name='thecomment'id="comment">
+        <input type="submit">
+    </form>
+</div>
+    
+    <div class="container">
+        <h1>Comments</h1>
+        {%for comment in comments %}
+        
+        <h3>{{comment.commentuser}}</h3>
+        <p>{{comment.comment}} </p>
+        <hr>
+        {% endfor %}
+    </div>
+    <div class="container" id="comments">
+        <!-- <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span> -->
+    </div>
+
+    {% endblock %}

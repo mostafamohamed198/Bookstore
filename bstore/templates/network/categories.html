@@ -1,0 +1,35 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+ 
+        {% block body %}
+
+        <div class="container">
+            <h1>{{category.category}}</h1>
+            <div class="thebooks">
+       {% for book in categorybook%}
+       
+       <div class="card">
+                      
+        <img class='cardimg'src="..{{book.cover.url}}">
+       
+        <div class="cardbook">
+        <h1>{{book.name}}</h1>
+        <h4>
+            {{book.authorname}}
+        </h4>
+        <h3>{{book.price}}$</h3>
+        </div>
+        <div class="sslogan">
+        <p >-{{book.slogan}}-</p>
+        </div> 
+        
+        <button id="addtocart" class="buycart"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
+        </div>
+        
+       {% endfor %}
+    
+   
+    </div>
+   
+{% endblock %}

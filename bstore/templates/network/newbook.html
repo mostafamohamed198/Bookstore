@@ -1,0 +1,17 @@
+{% extends "network/layout.html" %}
+{% load static %}
+{% block body %}
+<style>
+    textarea{
+        width: 100%;
+    }
+</style>
+<div class="container">
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %} 
+    {{ form.as_p }}
+    {{ reward.as_p }}
+    <input type="submit">
+   {% endblock%}
+</form>
+</div>

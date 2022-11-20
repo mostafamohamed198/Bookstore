@@ -1,0 +1,80 @@
+<!-- 
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><strong>{{ user.username }}</strong></a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'index' %}">All Posts</a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Following</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    </li>
+                {% endif %} -->
+            <!-- </ul>
+            </div>
+          </nav> -->
+        
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        
+        <link rel="stylesheet" href="{% static 'network/styles.css' %}">
+        <link rel="icon" href="2.jpeg">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Lora:wght@500&display=swap" rel="stylesheet">  
+    <script src="https://kit.fontawesome.com/1c83e69aa6.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="navdiv">
+            <div class="container">
+            <nav>
+       
+                <h2 id="navh" style="font-weight: 700;">Your book</h2>
+                <ul id="classnav">
+    
+                        <button class="navbutton">Home</button>
+     
+                        <button class="navbutton">Categories</button>
+        
+                        <button class="navbutton">Add Book</button>
+                
+                        <button class="navbutton">Your Cart</button>
+
+                    
+                    
+                        {% if user.is_authenticated %}
+                        <button class="button"><a class="navbutton" href="{% url 'logout' %}">Logout</a> </button>
+                        
+                    {% else %}
+                    <button class="button"><a class="navbutton" href="{% url 'login' %}">Login</a> </button>
+                    <button class="button"><a class="navbutton" href="{% url 'register' %}">Register</a> </button>
+       
+                    {% endif %}
+                    
+    
+                </ul>
+            
+            </nav>
+            </div>
+            </div>
+            {% block body %}
+            {% endblock %}
+    </body>
+</html>

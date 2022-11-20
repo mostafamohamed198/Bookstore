@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+document.querySelector('#test').onsubmit = function() {
+    console.log('s')
+  fetch('/test', {
+    method: 'POST',
+    body: JSON.stringify({
+        first: document.querySelector('#first').value,
+        second: document.querySelector('#second').value,
+    })})}});
+    </script>
+</head>
+<body>
+    <form id="test">
+        <input type="text" id="first" name="first">
+        <input type="number" id="second" name="second">
+        <input type="submit">
+    </form>
+</body>

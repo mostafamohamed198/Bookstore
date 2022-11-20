@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>book name</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Lora:wght@500&display=swap" rel="stylesheet">  
+<script src="https://kit.fontawesome.com/1c83e69aa6.js" crossorigin="anonymous"></script>
+        <style>
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+    }
+
+    @media (min-width:768px){
+    .container{
+        width:750;
+    }
+    }
+
+    @media(min-width:992px){
+    .container{
+        width: 970px;
+    }
+    }
+
+    @media(min-width: 1200px){
+    .container{
+        width:1170px
+    }
+    }
+    body{
+        margin-top: 0px;
+        font-family: 'Josefin Sans', sans-serif;
+        background-color:rgba(189, 184, 184, 0.163);
+    }
+         nav{
+                display:flex;
+                justify-content: space-between;
+                font-family: 'Josefin Sans', sans-serif;
+                top:0px;              
+                padding:0px;
+                margin-right:auto;
+                margin-left:auto;
+                
+            }
+            
+            #classnav{
+                display: flex;
+                list-style-type: none;
+                font-weight: 700;
+                color: rgb(24, 25, 52);
+                
+            }
+
+
+
+            #navh{
+                margin-left: 15px;
+                color:rgb(115, 3, 3);
+            }
+
+            #button{
+                background-color: white;
+                font-weight: inherit;
+                border-radius: 10px;
+                padding:5px;
+                width:100px;
+                border-color:rgb(24, 25, 52);
+                color:rgb(24, 25, 52);
+                margin-top:10px;
+                margin-bottom: 10px;
+                transition: 1s;
+            }
+
+            #button:hover{
+                background-color: rgb(213, 211, 211);
+                transition: 1s;
+            }
+
+            .navbutton{
+                width:100%;
+                height:100%;
+                background-color: inherit;
+                border:none;
+                color: rgb(41, 44, 97);
+                font-family: 'Josefin Sans', sans-serif;
+                font-weight: 700;
+                transition: 1s;
+                border-radius: 10px;
+
+            }
+
+            .navbutton:hover{
+                background-color: rgb(213, 211, 211);
+                transition: 1s;
+            }
+            ul{
+                padding-top:0px;
+                padding-bottom:0px;
+                margin-bottom: 0px;
+                margin-top: 0px;
+                margin-right:15px
+            }
+            
+            #title{
+                background-color: rgba(145, 146, 183, 0.201);
+                padding-top:50px;
+                padding-bottom: 50px;
+                width: 100%;
+                height:auto;
+            
+                
+            }
+            #navdiv{
+                background-color: rgba(145, 146, 183, 0.201);
+                box-shadow: 0px 0px 50px 0px rgb(0 0 0 / 28%) ;
+            }
+
+            #authorname{
+                font-family: 'Josefin Sans', sans-serif;
+                color:rgb(115, 3, 3);
+                margin-top:0px;
+                
+            }
+
+            #bookname{
+                font-family: 'Josefin Sans', sans-serif;
+                font-size:80px;
+                line-height: 85px;
+                color: rgb(39, 42, 93);
+            }
+
+            #slogan{
+                color: rgb(50, 60, 139);
+            }
+
+            #title .container{
+                display: flex;
+                justify-content: space-between;
+            }
+            #bookimg{
+             
+                max-height: 500px;
+            }
+            #titlewritten{
+                padding-top:50px
+            }
+            #price{
+                padding-top:10px;
+                color: rgb(39, 42, 93);
+            }
+
+            #price span{
+                color:rgb(115, 3, 3);
+            }
+
+            #cartbuy{
+                display: flex;
+            }
+
+            .buycart{
+                background-color: rgb(39, 42, 93);
+                border:none;
+                color:white;
+                width:170px;
+                height:50px;
+                border-radius: 15px;
+                margin-right:15px;
+                font-family: 'Josefin Sans', sans-serif;
+                font-weight: 700;
+                font-size: 20px;
+                transition: 1s;
+            }
+
+            .buycart:hover{
+                background-color:rgb(115, 3, 3);
+                transition:1s;
+            }
+
+            #descriptionquotes{
+                display:flex;
+                justify-content: space-between;
+            }
+            #description{
+                width:calc(50% - 15px);
+                margin-right: 15px;
+            }
+            #quotes{
+                width:50%;
+            }
+            .dqheading{
+                color: rgb(115, 3, 3);
+            }
+
+            .quotediv{
+                width:80%;
+                margin-left: auto;
+                margin-right: auto;
+                box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 28%) ;
+                background-color: white;
+                padding:1px;
+
+            }
+
+            #dqdiv{
+                background-color: rgba(189, 184, 184, 0.163);
+                
+            }
+
+            .quotep{
+                text-align: center;
+                padding-top:auto;
+                padding-bottom: auto;
+                color:rgb(39, 42, 93);
+                font-style: italic;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+ 
+            }
+
+            #dpar{
+                color: rgb(39, 42, 93);
+            }
+            #author{
+                background-color: rgba(145, 146, 183, 0.201);
+                
+                width:100%;
+                padding:0px;
+            }
+
+            #authorcontainer{
+                display: flex;
+                padding-top: 50px;
+                padding-bottom: 50px;
+                justify-content: space-between;
+                
+            }
+            #authorwritten{
+                padding-left: 30px;
+                padding-right: 30px;
+                padding-top: 60px;
+            }
+
+
+            #authorimage{
+                border-radius: 20px;
+                border: solid rgb(145, 146, 183);
+                padding:10px;
+                background-color: white;
+                
+            }
+            #aimage{
+                display: block;
+                border-radius: 20px;
+                width:300px;
+                height: 420px;
+                margin-top: auto;
+                margin-bottom: auto;
+                
+            }
+            #authorwritten h1{
+                color:rgb(39, 42, 93);
+            }
+
+            #authorwritten h2{
+                color:rgb(115, 3, 3);
+            }
+
+            #authorwritten p{
+                color:rgba(39, 42, 93, 0.804);
+            }
+
+            #chaptersfull{
+                background-color:rgba(189, 184, 184, 0.163);
+                width:100%;
+                
+            }
+
+            #chapters{
+                display:flex;
+                flex-wrap: wrap;
+                padding-bottom: 50px;
+                justify-content: space-between;
+
+            }
+            .chapter{
+                margin-top: 50px;
+                margin-right: 30px;
+                background-color: white;
+                width:40%;
+                height:200px;
+                overflow: hidden;
+                box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 28%);
+                padding:15px;
+                padding-bottom:14px;
+            }
+
+            .chapter h2{
+                color:rgb(115, 3, 3);
+            }
+
+            .chapter p{
+                color:rgba(39, 42, 93);
+            }
+
+            #rewadheading{
+                text-align: center;
+                font-size: 100px;
+                color: rgb(39, 42, 93);
+            }
+             
+            
+            #rewards{
+                display:flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                animation-name: grow;
+                animation-duration: 20s;
+                animation-fill-mode: forwards;
+
+            }
+            .reward{
+                border-color: rgba(0, 0, 0, 0.382);
+                border-style: solid;
+                border-width: 2px;
+                width:27%;
+                
+                height:270px;
+                padding-bottom: 15px;
+                padding-top: 15px;
+                margin-bottom: 40px;
+            }
+
+            .reward img{
+                display: block;
+                max-width:80%;
+                max-height: 65%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .reward h2{
+                text-align: center;
+                color:rgb(115, 3, 3);
+            }
+
+            hr{
+                color:rgba(167, 165, 165, 0.196);
+                height: 0.01px;
+            }
+            .checked {
+  color: orange;
+}
+
+        @keyframes grow{
+            from{
+                display:hidden;
+            }
+
+            to{display:flex}
+        }
+        </style>
+        <script>
+
+   
+        </script>
+
+    </head>
+    <body>
+        <div id="navdiv">
+        <div class="container">
+        <nav>
+   
+            <h2 id="navh">Your book</h2>
+            <ul id="classnav">
+
+                    <button class="navbutton">Home</button>
+ 
+                    <button class="navbutton">About</button>
+    
+                    <button class="navbutton">Chapters</button>
+            
+                    <button class="navbutton">Reviews</button>
+            
+                    <button class="navbutton">Author</button>
+                
+                
+                    <button class="navbutton">Contact</button>
+                
+                
+                    <button id="button">
+                        Buy Now
+                    </button>
+                
+
+            </ul>
+        
+        </nav>
+        </div>
+        </div>
+        <div id="title">
+            <div class="container">
+                <div id="titlewritten">
+                <h3 id="authorname">Author Name</h3>
+                <h1 id="bookname"> The Book name is kaza</h1>
+                <p id="slogan">-This slogan-</p>
+                <h2 id="price">Price:- <span>$12.98</span></h2>
+                <div id="cartbuy">
+                <button id="addtocart" class="buycart"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
+                <button id="buy"class="buycart"><i class="fa-regular fa-credit-card"></i> Buy Now</button>
+                </div>
+                </div>
+                <div>
+                    <img id='bookimg'src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198">
+                </div>
+            </div>
+        </div>
+        <div id="dqdiv">
+        <div class="container" id="descriptionquotes">
+            
+            <div id="description">
+                <h1 class="dqheading">Description</h1>
+                <p id="dpar">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            </div>
+            <div id="quotes">
+                <h1 class="dqheading">Book Quotes</h1>
+                <div class='quotediv'>
+                    <h2 class="quotep">"This is the quote"</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="author">
+        <div class="container" id="authorcontainer">
+
+            <div id="authorimage">
+                <img id='aimage'src="https://cdn4.vectorstock.com/i/1000x1000/79/73/portrait-man-young-male-cartoon-people-vector-15827973.jpg">
+            </div>
+            <div id="authorwritten">
+                <h1>Author Name</h1>
+                <h2>-position</h2>
+                <p>word by author Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+    </div>
+    <div id="chaptersfull">
+        <div class="container" id="chapters">
+            <div class="chapter">
+                <h2>
+                   chapter number
+                </h2>
+                <p>chapter description  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="chapter">
+                <h2>
+                   chapter number
+                </h2>
+                <p>chapter description  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.chapter description  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1 id="rewadheading">Rewards</h1>
+        <div id="rewards">
+            <div class="reward">
+                <h2>Reward name</h2>
+                <img src="https://play-lh.googleusercontent.com/4mgb7Q36mXwZOezInzec_cnLARjnYNEP4XhUiYigQVrJBNSewHwR2c4gQtOEIvT6hDs">
+            </div>
+
+            <div class="reward">
+                <h2>Reward name</h2>
+                <img src="https://play-lh.googleusercontent.com/4mgb7Q36mXwZOezInzec_cnLARjnYNEP4XhUiYigQVrJBNSewHwR2c4gQtOEIvT6hDs">
+            </div>
+
+            <div class="reward">
+                <h2>Reward name</h2>
+                <img src="https://www.creativegroupinc.com/wp-content/uploads/2020/01/Reward-Blog.png">
+            </div>
+            <div class="reward">
+                <h2>Reward name</h2>
+                <img src="https://www.creativegroupinc.com/wp-content/uploads/2020/01/Reward-Blog.png">
+            </div>
+        </div>
+    </div>
+    <hr>
+
+
+    <div class="container">
+        <h1>Comments</h1>
+        <h3>User</h3>
+        <p>comment  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        <hr>
+    </div>
+    <div class="container" id="comments">
+        <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+    </div>
+    </body>
+</html>

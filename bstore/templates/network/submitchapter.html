@@ -1,0 +1,8 @@
+<form method="POST">
+    {% csrf_token %}
+    <label>Chapter Number:</label>
+    <input name="chapternumber" type="number">
+    <label>Chapter Description:</label>
+    <textarea name='chapterdescription' type="text" maxlength="260"></textarea>
+    <input type="submit">
+</form>

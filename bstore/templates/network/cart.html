@@ -1,0 +1,59 @@
+{% extends "network/layout.html" %}
+{% load static %}
+    {% block body %}
+        <script>
+
+            document.addEventListener('DOMContentLoaded',function(){
+             allprices= document.querySelectorAll('.price');
+             let j=0
+            for (let i = 0 ; i < 1; i++){
+                allprices.forEach(price => {
+              j= j + parseInt(price.id);
+              console.log(allprices.length)
+                console.log(j);
+             })
+            }
+            document.querySelector('.total').innerHTML=`$${j}`
+        })
+
+            
+        </script>
+    
+        <div class="container">
+            
+            <div class="table">
+                <div class="table-header">
+                    <div class="header__item"><a id="name" class="filter__link" href="#">Cover</a></div>
+                    <div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Name</a></div>
+                    <div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Price</a></div>
+                    <div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#"></a></div>
+                </div>
+                <div class="table-content">
+                    {%for book in usercart %}	
+                    <div class="table-row">		
+                        <div class="table-data"><img class='cartimage'src='..{{book.cover.url}}'></div>
+                        <div class="table-data">{{book.name}}</div>
+                        <div class="table-data"><span class="price" id="{{book.price}}">{{book.price}}<span></span></div>
+                        <div class="table-data"><button>Delete</button></div>
+                    </div>
+                    {%endfor%}
+                </div>	
+            </div>
+            <div class="totaldiv">
+            <h2>Total:</h2><h2 class="total"></h2>
+            </div>
+            <form method="post">'
+                {% csrf_token %}
+                <input hidden name='reqbooks' value="{% for cart in usercart %}
+                {{cart.id}}
+                {% endfor %}
+                ">
+                <label>Address:</label>
+                <input name="address" type="text">
+                <label>Phone</label>
+                <input name="phone" type="number">
+                <input type="submit">
+            </form>
+        </div>
+         
+    {% endblock %}

@@ -1,0 +1,18 @@
+{% extends "network/layout.html" %}
+{% load static %}
+    {% block body %}
+    <div class='container'>
+{% for book in detail.requestedbooks.all %}
+
+<div class="detailsbooks">
+<div>{{book.name}}</div>
+<div> <img src='..{{book.cover.url}}' class="detailsimg"></div>
+<div>{{book.price}}</div>
+</div>
+
+{% endfor %}
+<h2>User: {{detail.requesteduser}}</h2>
+<h2>Phone: {{detail.requestphone}}</h2>
+<h2>Address: {{detail.requestaddress}}</h2>
+</div>
+    {% endblock %}
